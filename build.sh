@@ -1,4 +1,4 @@
-#!/usr/env/bash
+#!/usr/bin/env bash
 set -o errexit
 
 # instalar deps (si render no lo hace)
