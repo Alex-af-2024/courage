@@ -44,9 +44,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'actor',
+    'corsheaders',  # <-- Agregado para CORS
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',  # <-- Agregado para CORS
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware', # <-- Agregado para servir archivos estáticos en producción
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -136,3 +138,11 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage' 
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+CORS_ALLOW_ALL_ORIGINS = [
+    "http://localhost:3000",
+    #"http:// AGREGAR AQUI LA URL DE TU FRONTEND DE PRODUCCIÓN VERSEL"
+]
+
+# CORS_ALLOW_ALL_ORIGINS = True  # <-- Agregado para permitir todas las solicitudes CORS (solo para desarrollo)
