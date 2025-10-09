@@ -142,7 +142,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOW_ALL_ORIGINS = [
     "http://localhost:3000",
+    "http://localhost:5137",        
     #"http:// AGREGAR AQUI LA URL DE TU FRONTEND DE PRODUCCIÓN VERSEL"
+    
 ]
 
 # CORS_ALLOW_ALL_ORIGINS = True  # <-- Agregado para permitir todas las solicitudes CORS (solo para desarrollo)
