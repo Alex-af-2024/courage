@@ -139,12 +139,14 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage' 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+#Esta variable no existe en Django, la creamos nosotros
+#CORS_ALLOW_ALL_ORIGINS = True  # <-- Agregado para permitir todas las solicitudes CORS (solo para desarrollo)  y nunca en producción
 
-CORS_ALLOW_ALL_ORIGINS = [
-    "http://localhost:3000",
-    "http://localhost:5137",        
-    #"http:// AGREGAR AQUI LA URL DE TU FRONTEND DE PRODUCCIÓN VERSEL"
-    
+
+#Esta variable existe en Django
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3000',  # Puerto predeterminado de React
+    'http://localhost:5173',  # Puerto predeterminado de Vite
+    # Agrega 'https://tu-frontend-en-vercel.com' si despliegas después
 ]
-
 # CORS_ALLOW_ALL_ORIGINS = True  # <-- Agregado para permitir todas las solicitudes CORS (solo para desarrollo)
